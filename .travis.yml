@@ -9,9 +9,12 @@ language: generic
 # Need to build in xenial with lazarus 1.8.2.
 # Do not use bionic or newer Lazarus version
 
-env:
-  global:
-    - DISPLAY=:99.0
+services:
+  - xvfb
+
+#env:
+#  global:
+#    - DISPLAY=:99.0
 
 matrix:
   include:
@@ -41,7 +44,7 @@ script:
   - lazbuild --build-mode=Debug $LAZ_OPT $PROJECT_LPI_UNIT_TEST_PATH
 
 # Start the unit test
-  - xvfb-run source ./scripts/travis_unit_test.sh
+  - source ./scripts/travis_unit_test.sh
 
 before_deploy:
 # Create the zip file for deployment
