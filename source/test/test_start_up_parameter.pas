@@ -595,8 +595,10 @@ end;
 
 initialization
   // macOS version does not support startup parameter
+{$IFNDEF CPUARM}
 {$IFNDEF DARWIN}
   RegisterTest(TTestStartUpParameter);
+{$ENDIF}
 {$ENDIF}
 
 end.
