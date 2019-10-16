@@ -25,9 +25,9 @@ matrix:
       osx_image: xcode9.4
       env: LAZ_VER=2.0.4 RELEASE_ZIP_FILE="trackereditor_macOS.zip"
 
-before_install:
+#before_install:
 # Start virtual display server
-  - Xvfb $DISPLAY &
+#  - Xvfb $DISPLAY &
 
 install:
 # Install prerequisites (fpc/lazarus/wine/qemu)
@@ -41,7 +41,7 @@ script:
   - lazbuild --build-mode=Debug $LAZ_OPT $PROJECT_LPI_UNIT_TEST_PATH
 
 # Start the unit test
-  - source ./scripts/travis_unit_test.sh
+  - xvfb-run source ./scripts/travis_unit_test.sh
 
 before_deploy:
 # Create the zip file for deployment
