@@ -26,7 +26,7 @@ matrix:
       env: LAZ_PKG=true RELEASE_ZIP_FILE="trackereditor_linux_arm64_arm_V8.zip"
     - os: osx
       osx_image: xcode9.4
-      env: LAZ_VER=2.0.4 RELEASE_ZIP_FILE="trackereditor_macOS.zip"
+      env: LAZ_VER=2.0.6 RELEASE_ZIP_FILE="trackereditor_macOS.zip"
 
 #before_install:
 # Start virtual display server
